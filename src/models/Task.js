@@ -14,6 +14,13 @@ const Task = (sequelize, DataTypes) => {
     },
   );
 
+  Task.associate = (models) => {
+    Task.belongsTo(models.Users, {
+      foreignKey: 'id_user',
+      as: 'Users',
+    });
+  };
+
   return Task;
 };
 

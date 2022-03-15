@@ -20,6 +20,7 @@ module.exports = {
       dateAndHour: {
         allowNull: false,
         type: Sequelize.DATE,
+        field: 'date_and_hour',
       },
       duration: {
         allowNull: false,
@@ -28,6 +29,11 @@ module.exports = {
       idUser: {
         allowNull: false,
         type: Sequelize.INTEGER,
+        field: 'id_user',
+        references: {
+          model: 'Users',
+          key: 'id',
+        },
       },
     });
 
