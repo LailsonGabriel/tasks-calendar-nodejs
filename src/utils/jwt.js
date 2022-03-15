@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken');
 
+// Não é uma boa prática colocar o segredo aqui, mas como é um teste. Estou atribuindo a uma variável para termos de funcionabilidade
 const JWT_SECRET = 'segredo!';
 
 const jsonConfig = {

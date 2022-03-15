@@ -1,19 +1,19 @@
-const { Task } = require('../models');
+const { Tasks } = require('../models');
 
 const getAllTasksByUser = async (idUser) => {
-  const tasks = await Task.findAll({ where: { idUser } });
+  const tasks = await Tasks.findAll({ where: { idUser } });
 
   return tasks;
 };
 
 const getTaskById = async (id) => {
-  const tasks = await Task.findAll({ where: { id } });
+  const tasks = await Tasks.findAll({ where: { id } });
 
   return tasks;
 };
 
 const createTask = async (body) => {
-  const create = await Task.create({ ...body });
+  const create = await Tasks.create({ ...body });
 
   return create;
 };

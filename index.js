@@ -3,7 +3,11 @@ const errorMiddleware = require('./src/middlewares/errorMiddleware');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('Hello World!'));
+app.use(express.json());
+
+const userRoute = require('./src/routes/user.routes');
+
+app.use('/user', userRoute);
 
 app.use(errorMiddleware);
 

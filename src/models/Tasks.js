@@ -1,8 +1,11 @@
-const Task = (sequelize, DataTypes) => {
-  const Task = sequelize.define(
+module.exports = (sequelize, DataTypes) => {
+  const Tasks = sequelize.define(
     'Tasks',
     {
-      id: DataTypes.INTEGER,
+      id: {
+        type: DataTypes.INTEGER,
+        primaryKey: true,
+      },
       title: DataTypes.STRING,
       description: DataTypes.STRING,
       dateAndHour: DataTypes.DATE,
@@ -14,14 +17,12 @@ const Task = (sequelize, DataTypes) => {
     },
   );
 
-  Task.associate = (models) => {
-    Task.belongsTo(models.Users, {
+  Tasks.associate = (models) => {
+    Tasks.belongsTo(models.Users, {
       foreignKey: 'id_user',
       as: 'Users',
     });
   };
 
-  return Task;
+  return Tasks;
 };
-
-module.exports = Task;
