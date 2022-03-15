@@ -7,7 +7,7 @@ const getAllTasksByUser = async (idUser) => {
 };
 
 const getTaskById = async (id) => {
-  const tasks = await Tasks.findAll({ where: { id } });
+  const tasks = await Tasks.findOne({ where: { id } });
 
   return tasks;
 };
