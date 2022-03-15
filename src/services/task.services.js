@@ -13,7 +13,10 @@ const getTaskById = async (id) => {
 };
 
 const createTask = async (body) => {
-  const create = await Tasks.create({ ...body });
+  const create = await Tasks.create({
+    ...body,
+    dateAndHour: new Date(body.dateAndHour),
+  });
 
   return create;
 };

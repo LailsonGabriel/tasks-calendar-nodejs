@@ -5,12 +5,19 @@ module.exports = (sequelize, DataTypes) => {
       id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
+        autoIncrement: true,
       },
       title: DataTypes.STRING,
       description: DataTypes.STRING,
-      dateAndHour: DataTypes.DATE,
+      dateAndHour: {
+        type: DataTypes.DATE,
+        field: 'date_and_hour',
+      },
       duration: DataTypes.INTEGER,
-      idUser: DataTypes.INTEGER,
+      idUser: {
+        type: DataTypes.INTEGER,
+        field: 'id_user',
+      },
     },
     {
       timestamps: false,

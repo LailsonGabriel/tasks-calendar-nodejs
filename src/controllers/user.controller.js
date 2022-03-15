@@ -13,13 +13,7 @@ const registerUser = rescue(async (req, res) => {
 });
 
 const getUser = rescue(async (req, res) => {
-  const { email, password } = req.body;
-
-  const user = await userService.getUserByEmail(email);
-
-  if (user.email !== email || user.password !== password) {
-    return res.status(402).json({ message: 'Email ou senha errados!' });
-  }
+  const { email } = req.body;
 
   const token = jwt.sign({ email });
 

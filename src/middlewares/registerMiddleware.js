@@ -15,6 +15,8 @@ const verifyEmailExist = async (req, res, next) => {
   if (existInDB) {
     return res.status(400).json({ message: 'Esse email já está cadastrado!' });
   }
+
+  next();
 };
 
 module.exports = { registerMiddleware, verifyEmailExist };
