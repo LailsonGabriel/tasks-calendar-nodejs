@@ -6,4 +6,10 @@ const getUserByEmail = async (email) => {
   return user;
 };
 
-module.exports = getUserByEmail;
+const registerUser = async (user) => {
+  const user = await User.create({ ...user });
+
+  return registerUser;
+};
+
+module.exports = { registerUser, getUserByEmail };

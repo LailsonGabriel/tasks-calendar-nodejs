@@ -12,4 +12,10 @@ const getTaskById = async (id) => {
   return tasks;
 };
 
-module.exports = { getAllTasksByUser, getTaskById };
+const createTask = async (body) => {
+  const create = await Task.create({ ...body });
+
+  return create;
+};
+
+module.exports = { getAllTasksByUser, getTaskById, createTask };
