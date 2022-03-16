@@ -1,9 +1,11 @@
 const express = require('express');
 const errorMiddleware = require('./src/middlewares/errorMiddleware');
 const app = express();
-const port = 3000;
+const cors = require('cors');
+const port = 5000;
 
 app.use(express.json());
+app.use(cors());
 
 const userRoute = require('./src/routes/user.routes');
 

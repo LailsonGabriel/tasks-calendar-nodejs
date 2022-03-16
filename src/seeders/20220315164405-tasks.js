@@ -6,7 +6,7 @@ module.exports = {
       {
         title: 'My First Task',
         description: 'Lorem ipsum Lorem ipsum Lorem ipsum Lorem ipsum',
-        dateAndHour: new Date('2022-04-15 06:00:00'),
+        dateAndHour: '2022-04-15 06:00:00',
         duration: 60,
         idUser: 1,
       },
