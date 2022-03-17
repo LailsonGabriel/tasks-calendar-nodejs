@@ -21,10 +21,20 @@ const createTask = async (body) => {
   return create;
 };
 
+const updateTask = async (body, id) => {
+  const task = await Tasks.update({ ...body }, { where: { id } });
+};
+
 const deleteTask = async (id) => {
   const task = await Tasks.destroy({ where: { id } });
 
   return task;
 };
 
-module.exports = { getAllTasksByUser, getTaskById, createTask, deleteTask };
+module.exports = {
+  getAllTasksByUser,
+  getTaskById,
+  createTask,
+  deleteTask,
+  updateTask,
+};
