@@ -22,9 +22,9 @@ const createTask = async (body) => {
 };
 
 const updateTask = async (body, id) => {
-  const task = await Tasks.update({ ...body }, { where: { id } });
-
-  return task;
+  const prevTask = await getTaskById(id);
+  await Tasks.update({ ...body }, { where: { id } });
+  return { ...prevTask.dataValues, ...body };
 };
 
 const deleteTask = async (id) => {

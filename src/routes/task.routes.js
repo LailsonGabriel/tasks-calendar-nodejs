@@ -13,6 +13,6 @@ router.get('/user/:id', verifyToken, getAllTasks);
 router.get('/:id', verifyToken, getTask);
 router.post('/', verifyToken, createTask);
 router.put('/:id', verifyToken, updateTask);
-router.put('/:id', verifyToken, destroyTask);
+router.delete('/:id', verifyToken, destroyTask);
 
 module.exports = router;

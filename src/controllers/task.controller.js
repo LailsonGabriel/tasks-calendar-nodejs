@@ -28,8 +28,7 @@ const updateTask = rescue(async (req, res) => {
   const task = req.body;
   const { id } = req.params;
   const taskUpdated = await taskService.updateTask(task, id);
-
-  return taskUpdated;
+  return res.status(202).json(taskUpdated);
 });
 
 const destroyTask = rescue(async (req, res) => {
@@ -37,7 +36,7 @@ const destroyTask = rescue(async (req, res) => {
 
   const task = await taskService.deleteTask(id);
 
-  return task;
+  return res.status(202).json(task);
 });
 
 module.exports = { getAllTasks, createTask, getTask, updateTask, destroyTask };
