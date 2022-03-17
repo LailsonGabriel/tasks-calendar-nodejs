@@ -32,4 +32,12 @@ const updateTask = rescue(async (req, res) => {
   return taskUpdated;
 });
 
-module.exports = { getAllTasks, createTask, getTask, updateTask };
+const destroyTask = rescue(async (req, res) => {
+  const { id } = req.params;
+
+  const task = await taskService.deleteTask(id);
+
+  return task;
+});
+
+module.exports = { getAllTasks, createTask, getTask, updateTask, destroyTask };
