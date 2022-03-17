@@ -17,8 +17,10 @@ const getUser = rescue(async (req, res) => {
   const { email } = req.body;
 
   const token = jwt.sign({ email });
+  const user = await userService.getUserByEmail(email);
 
-  return res.status(200).json({ token });
+  const { name, id, email: userEmail } = user;
+  return res.status(200).json({ token, name, id, email: userEmail });
 });
 
 module.exports = { registerUser, getUser };
