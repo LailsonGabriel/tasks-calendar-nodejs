@@ -13,6 +13,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.DATE,
         field: 'date_and_hour',
       },
+      resolved: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
+      },
       duration: DataTypes.INTEGER,
       idUser: {
         type: DataTypes.INTEGER,

@@ -23,6 +23,8 @@ const createTask = async (body) => {
 
 const updateTask = async (body, id) => {
   const task = await Tasks.update({ ...body }, { where: { id } });
+
+  return task;
 };
 
 const deleteTask = async (id) => {
