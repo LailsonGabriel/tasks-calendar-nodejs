@@ -7,9 +7,10 @@ const registerUser = rescue(async (req, res) => {
 
   const token = jwt.sign({ email: user.email });
 
-  await userService.registerUser(user);
+  const userRegistered = await userService.registerUser(user);
+  const { email, id, name } = userRegistered.dataValues;
 
-  return res.status(201).json({ token });
+  return res.status(201).json({ token, email, id, name });
 });
 
 const getUser = rescue(async (req, res) => {
