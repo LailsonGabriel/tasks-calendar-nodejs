@@ -21,4 +21,10 @@ const createTask = async (body) => {
   return create;
 };
 
-module.exports = { getAllTasksByUser, getTaskById, createTask };
+const deleteTask = async (id) => {
+  const task = await Tasks.destroy({ where: { id } });
+
+  return task;
+};
+
+module.exports = { getAllTasksByUser, getTaskById, createTask, deleteTask };

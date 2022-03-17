@@ -26,6 +26,11 @@ module.exports = {
         allowNull: false,
         type: Sequelize.INTEGER,
       },
+      resolved: {
+        allowNull: false,
+        type: Sequelize.BOOLEAN,
+        defaultValue: false,
+      },
       idUser: {
         allowNull: false,
         type: Sequelize.INTEGER,
