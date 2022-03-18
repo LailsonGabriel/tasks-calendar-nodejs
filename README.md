@@ -3,9 +3,31 @@
 # Como usar a aplicação??
 <ul>
   1<li><strong>npm install - </strong>vai instalar as dependências no projeto**IMPORTANTE!**</li>
-  2<li><strong>npm run prestart - </strong> vai rodar o script para popular seu Banco de DADOS(MYSQL)</li>
+  <li>Instale as dependências <strong>npm install</strong></li>
+  <li>Crie um arquivo .env **Na pasta raíz**</strong></li>
+  **Atenção preencha os campo MYSQL_USER, MYSQL_PASS de acordo com o seu user do MYSQL
+  **Como exemplo abaixo:
+</ol>
+
+
+![Exemplo](https://github.com/LailsonGabriel/tasks-calendar-nodejs/blob/main/Screenshot%20from%202022-03-18%2009-14-23.png)
+  2<li><strong>npm run prestart - </strong> vai rodar o sequelize para criar e popular seu Banco de DADOS(MYSQL)</li>
   3<li><strong>npm run start:dev - </strong> vai iniciar sua API(Obs: é recomendado rodar primeramente o comando npm prestart)</li>
 </ul>
+
+# Docker MYSQL
+
+Você também pode utilizar o Docker:
+
+<p>Para finalizar as tarefas do MySQL em sua máquina:</p>
+<strong>sudo systemctl stop mysql</strong>
+<p>E depois:</p>
+<strong>docker container run --name taks-mysql -e MYSQL_ROOT_PASSWORD=tasks-calendar -d -p 3306:3306 mysql:5</strong>
+<p>Para rodar o Mysql em um container Docker</p>
+
+<p>E o seu .env deve ficar assim:</p>
+
+![Exemplo](https://github.com/LailsonGabriel/tasks-calendar-nodejs/blob/main/Screenshot%20from%202022-03-18%2009-17-54.png)
 
 # Rotas de Login e Cadastro de Usuário
 
