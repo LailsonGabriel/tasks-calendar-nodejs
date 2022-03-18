@@ -20,9 +20,9 @@
 Você também pode utilizar o Docker:
 
 <p>Para finalizar as tarefas do MySQL em sua máquina:</p>
-<strong>sudo systemctl stop mysql</strong>
+<strong>Linux: <code>sudo systemctl stop mysql</code> | para Windows consulte esse <a href="https://admininfo.info/iniciar-detener-o-reiniciar-servicio-mysql-en-linux">link</a></strong>
 <p>E depois:</p>
-<strong>docker container run --name taks-mysql -e MYSQL_ROOT_PASSWORD=tasks-calendar -d -p 3306:3306 mysql:5</strong>
+<code>docker container run --name taks-mysql -e MYSQL_ROOT_PASSWORD=tasks-calendar -d -p 3306:3306 mysql:5</code>
 <p>Para rodar o Mysql em um container Docker</p>
 
 <p>E o seu .env deve ficar assim:</p>
