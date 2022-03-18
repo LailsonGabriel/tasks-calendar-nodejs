@@ -12,7 +12,7 @@
 
 ![Exemplo](https://github.com/LailsonGabriel/tasks-calendar-nodejs/blob/main/Screenshot%20from%202022-03-18%2009-14-23.png)
   2<li><strong>npm run prestart - </strong> vai rodar o sequelize para criar e popular seu Banco de DADOS(MYSQL)</li>
-  3<li><strong>npm run start:dev - </strong> vai iniciar sua API(Obs: é recomendado rodar primeramente o comando npm prestart)</li>
+  3<li><strong>npm run start - </strong> vai iniciar sua API(Obs: é recomendado rodar primeramente o comando npm prestart)</li>
 </ul>
 
 # Docker MYSQL
